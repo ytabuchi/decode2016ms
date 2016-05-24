@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="decodeCamera.MediaPage"
+             Title="de:code Camera">
+  <StackLayout Padding="10">
+    <Button Text="Take a photo" Clicked="buttonClicked"/>
+    <Label x:Name="label" Text="File location"/>
+    <Image x:Name="image" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
+  </StackLayout>
+</ContentPage>
