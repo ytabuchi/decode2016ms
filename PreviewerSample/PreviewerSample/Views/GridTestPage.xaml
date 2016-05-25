@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   x:Class="PreviewerSample.GridTestPage">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="80" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		
+		<Image Source="friend_thumbnail_01.jpg" 
+			WidthRequest="65" 
+			HeightRequest="65" />
+		
+		<Grid Grid.Column="1" 
+				VerticalOptions="Center" 
+				RowSpacing="1" 
+				ColumnSpacing="1" 
+				Padding="1"
+				BackgroundColor="#e6e6e6"> <!-- E6E6E6 -->
+			<Grid.RowDefinitions>
+				<RowDefinition Height="20" />
+				<RowDefinition Height="10" />
+				<RowDefinition Height="30" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="65" />
+				<ColumnDefinition Width="70" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			
+			<ContentView Grid.Row="0" Grid.Column="0" BackgroundColor="#F6F6F6">
+				<StackLayout Orientation="Horizontal" Padding="8, 0" HorizontalOptions="End">
+					<Image Source="ic_followers.png"
+						WidthRequest="12"
+						HeightRequest="12"/>
+					<Label Text="500" 
+							VerticalTextAlignment="Center"
+							TextColor="#888"
+							FontSize="12"/>
+				</StackLayout>
+			</ContentView>
+			
+			<ContentView Grid.Row="0" Grid.Column="1" BackgroundColor="#F6F6F6">
+				<StackLayout Orientation="Horizontal" Padding="8, 0" HorizontalOptions="End">
+					<Image Source="ic_age.png"
+						WidthRequest="12"
+						HeightRequest="12"/>
+					<Label Text="29歳" 
+							VerticalTextAlignment="Center"
+							TextColor="#888"
+							FontSize="12"/>
+				</StackLayout>
+			</ContentView>
+
+			<ContentView Grid.Row="0" Grid.Column="2" BackgroundColor="White">
+			</ContentView>
+
+			<ContentView Grid.Row="1" Grid.Column="0" BackgroundColor="White">
+			</ContentView>
+
+			<ContentView Grid.Row="1" Grid.Column="1" BackgroundColor="White">
+			</ContentView>
+
+			<ContentView Grid.Row="1" Grid.Column="2" BackgroundColor="White">
+			</ContentView>
+
+			<ContentView Grid.Row="2" 
+					Grid.Column="0"
+					Grid.ColumnSpan="3"
+					BackgroundColor="White">
+				<StackLayout Orientation="Horizontal"
+						Padding="5, 0"
+						Spacing="5">
+					<Image Source="ic_division.png"
+							WidthRequest="12"
+							HeightRequest="12"/>
+					<Label Text="Marketing"
+							FontSize="14"
+							TextColor="#777"
+							VerticalTextAlignment="Center"/>
+					<BoxView Color="Red"
+							WidthRequest="5"
+							Margin="7, 0, 7, 0"/>
+					<Image Source="ic_location.png"
+							WidthRequest="12"
+							HeightRequest="12"/>
+					<Label Text="Melbourne"
+							FontSize="14"
+							TextColor="#777"
+							VerticalTextAlignment="Center"/>
+				</StackLayout>
+			</ContentView>
+
+<!--			<ContentView Grid.Row="2" Grid.Column="1" BackgroundColor="White">
+			</ContentView>
+
+			<ContentView Grid.Row="2" Grid.Column="2" BackgroundColor="White">
+			</ContentView>-->
+		</Grid>
+	</Grid>
+</ContentPage>

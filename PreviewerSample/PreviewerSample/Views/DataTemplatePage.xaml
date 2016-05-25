@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:local="clr-namespace:PreviewerSample.Views;assembly=PreviewerSample"
+		x:Class="PreviewerSample.Views.DataTemplatePage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness"
+				iOS="0, 20, 0, 0"/>
+	</ContentPage.Padding>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<!-- DataTemplate定義-->
+			<DataTemplate x:Key="validPersonTemplate">
+				<ViewCell>
+					<StackLayout Orientation="Horizontal"
+							Spacing="10">
+						<BoxView Color="Lime"
+								WidthRequest="4"/>
+						<Label Text="{Binding Name}"
+								VerticalTextAlignment="Center"/>
+						<Label Text="{Binding Age, StringFormat='{0}歳'}"
+								TextColor="Gray"
+								HorizontalOptions="EndAndExpand"
+								VerticalTextAlignment="Center"
+								Margin="0, 0, 10, 0"/>
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+			<DataTemplate x:Key="invalidPersonTemplate">
+				<ViewCell>
+ 					<StackLayout Orientation="Horizontal"
+							Spacing="10">
+						<BoxView Color="Red"
+								WidthRequest="4"/>
+						<Label Text="{Binding Name}"
+								VerticalTextAlignment="Center"/>
+						<Label Text="{Binding Age, StringFormat='{0}歳'}"
+								TextColor="Gray"
+								HorizontalOptions="EndAndExpand"
+								VerticalTextAlignment="Center"
+								Margin="0, 0, 10, 0"/>
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+			<!-- Selector指定 -->
+            <local:PersonDataTemplateSelector x:Key="personDataTemplateSelector"
+                ValidTemplate="{StaticResource validPersonTemplate}"
+                InvalidTemplate="{StaticResource invalidPersonTemplate}"/>
+			
+        </ResourceDictionary>
+    </ContentPage.Resources>
+	
+	<ContentPage.Content>
+		<ListView ItemsSource="{Binding}"
+			ItemTemplate="{StaticResource personDataTemplateSelector}"/> <!-- ItemTemplateにSelctorを指定 -->
+	</ContentPage.Content>
+	
+</ContentPage>

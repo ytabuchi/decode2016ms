@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"
+		xmlns:light="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light"
+		x:Class="PreviewerSample.App">
+	<Application.Resources>
+		<!-- MergedWith="light:LightThemeResources"> -->
+		<!-- MergedWith="dark:DarkThemeResources"> -->
+		<ResourceDictionary MergedWith="light:LightThemeResources">
+			<Style x:Key="nameStyle" TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+				<Setter Property="TextColor">
+					<Setter.Value>
+						<OnPlatform x:TypeArguments="Color"
+								iOS="#B765B8"
+								Android="#3498DB"/>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="FontSize" Value="20"/>
+			</Style>
+			<Style x:Key="detailStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="14"/>
+				<Setter Property="VerticalTextAlignment" Value="End"/>
+				<Setter Property="TextColor" Value="Gray"/>
+				<Setter Property="HorizontalOptions" Value="End"/>
+			</Style>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>
